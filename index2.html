@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bmr calculator">
+        <h2>BMR Calculator</h2>
+        <div class="contrals">
+            <form>
+                <h3>AGE</h3>
+                <input type="text" id="age" value="">
+                <div class="gender">
+                    <input type="radio" id="male" value="male" name="gender" checked>
+                    <label for="male">male</label>
+                    <input type="radio" id="female" value="female" name="gender" checked>
+                    <label for="female">female</label>
+                </div>
+                <div class="height">
+                    <h3>height</h3>
+                    <input type="text" id="height" value="180%">
+                    <div class="unit">cm</div>
+                </div>
+                <div class="weight">
+                    <h3>height</h3>
+                    <input type="text" id="weight" value="74%">
+                    <div class="unit">kg</div>
+                </div>
+            </form>
+        </div>
+        <div class="result">
+            <button class="calculate-button">calculate</button>
+            <div class="result" massage>
+                <span class="calories">1,640</span>calories/day
+            </div>
+        </div>
+    </div>
+</body>
+</html>
