@@ -6,12 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>image</h1>
-    <div>
-        <img src="cape-7404790_640.jpg" weight="500px">
-    </div>
-    <div>
-    <video src="vedio.mp4" weight="500px" controls></video>
-</div>
+    <h1 id="change">percentage cal</h1>
+    <img src="./mainahamadbaist-cover.jpg" weight="300px">
+    <button onclick="changenoe();">Change Now</button>
+    <a href="duckett (1).pdf" target="_blank"></a>
+    <form onsubmit="percentagecal(); return false">
+    <label for="tm">Total Marks</label>
+    <input type="number" name="tm" placeholder="enter your tm" id="tm1" required>
+        <!---obt marks-->
+        <label for="obt">obt Marks</label>
+    <input type="number" name="obt" placeholder="enter your tm" id="obt1" required>
+    <button type="submit" ondblclick="percentagecal(); return false">calculate</button>
+    </form>
+    <script>
+        function percentagecal(){
+            let stdtmMarks = document.getElementById("tm1").value;
+            let stdobtM = document.getElementById("obt1").value;
+            let res = (stdtmMarks / stdobtM) * 100;
+            document.getElementById("change").innerHTML=("you have got it" + res + "%")
+            alert("you have got it" + res + "%")
+        }
+
+
+        function changenoe(){
+            document.getElementById("abc").src="./pni.png"
+        }
+
+    </script>
 </body>
 </html>
