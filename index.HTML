@@ -1,26 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <h1>form</h1>
-    <p>full the form with corret information</p>
-    <form >
-        <label for="first name">First Name</label>
-        <input type="text" id="first name"><br>
-        <label for="last name">Last name</label>
-        <input type="text" id="last name"><br>
-        <lable for="gender">Gender</lable>
-        <input type="gender" id="male">male<br>
-        <input type="gender" id="female">female<br>
-        <label for="number">Number</label>
-        <input type="text" id="number"><br>
-        <label for="birthdate">Birthdate</label>
-        <input type="text" id="birthdate"><br>
-        <input type="submit">
-    </form>
-</body>
-</html>
+ </head>
+ <body>
+    <div id="bmr Calculator">
+        <h1>BMR Calculator</h1>
+        <div class="controls">
+            <form>
+                <h2>AGE</h2>
+                <input type="text" id="age" value=""><br>
+                <label foe="gender">Gender</label><br>
+                <input type="radio" id="mlae" value="male" name="gender" checked>
+                <lable for="male">Male</lable>
+                <input type="radio" id="femlae" value="female" name="gender" checked>
+                <lable for="female">Female</lable>
+                <div class="height">
+                    <h2>height</h2>
+                    <input type="text" id="height" value="180">
+                    <div class="unit">cm</div>
+                </div>
+                <div class="weight">
+                    <h2>weight</h2>
+                    <input type="text" id="weight" value="74">
+                    <div class="unit">kg</div>
+                </div>
+            </form>
+        </div>
+        <div class="result">
+            <button type="calculate">click</button>
+            <div class="result" mesage>
+                <span class="calories">1,640</span>calories/day
+            </div>
+        </div>
+    </div>
+ </body>
+ </html>
