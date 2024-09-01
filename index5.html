@@ -1,32 +1,98 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- </head>
- <body>
-    <div>
-        <h1>BMI Calculator</h1>
-        <p class="text">Height</p>
-        <input class="text" id="height">
-        <p class="text">Weight</p>
-        <input class="text" id="weight">
-        <p id="result"></p>
-        <button id="btn" onclick="bmi()">click</button>
-        <p id="infor">please enter your height [cm] weight [kg]</p>
-    </div>
-
-
-
-    <script>
-        function bmi(){
-            var h = document.getElementById("height").value;
-            var w = document.getElementById("weight").value;
-            var bmi = w / (h/100 * h/100);
-            var total = bmi.toFixed(2);
-            document.getElementById('result') .innerHTML = "Your bmi is" + total
+    <title>Percentage and Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
         }
-    </script>
- </body>
- </html>
+        .calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .calculator h2 {
+            text-align: center;
+        }
+        .calculator input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .calculator button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2>Percentage and Grade Calculator</h2>
+    <input type="number" id="marksObtained" placeholder="Enter marks obtained" />
+    <input type="number" id="totalMarks" placeholder="Enter total marks" />
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result" id="result">
+        <!-- Result will be displayed here -->
+    </div>
+</div>
+
+<script>
+    function calculate() {
+        const marksObtained = parseFloat(document.getElementById('marksObtained').value);
+        const totalMarks = parseFloat(document.getElementById('totalMarks').value);
+
+        if (isNaN(marksObtained) || isNaN(totalMarks) || totalMarks === 0) {
+            alert("Please enter valid numbers!");
+            return;
+        }
+
+        const percentage = (marksObtained / totalMarks) * 100;
+        let grade = '';
+
+        if (percentage >= 90) {
+            grade = 'A+';
+        } else if (percentage >= 80) {
+            grade = 'A';
+        } else if (percentage >= 70) {
+            grade = 'B';
+        } else if (percentage >= 60) {
+            grade = 'C';
+        } else if (percentage >= 50) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `<p>Percentage: ${percentage.toFixed(2)}%</p><p>Grade: ${grade}</p>`;
+    }
+</script>
+
+</body>
+</html>
